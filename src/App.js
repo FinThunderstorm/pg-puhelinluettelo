@@ -52,17 +52,21 @@ const App = () => {
   
   const Filter = (props) => {
     return (
+      <>
       <form><div>filter shown with <input value={props.filterValue} onChange={props.filterOnChange}/></div></form>
+      </>
     )
   }
 
   const PersonForm = (props) => {
     return (
+      <>
       <form onSubmit={props.onSubmit}>
         <div>name: <input value={props.nameValue} onChange={props.nameOnChange}/></div>
         <div>number: <input value={props.numberValue} onChange={props.numberOnChange}/></div>
         <div><button type="submit">add</button></div>
       </form>
+      </>
     )
   }
 
@@ -91,7 +95,8 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
-      <Filter onSubmit={filterPerson} filterValue={newFilter} filterOnChange={handleFilterChange}/>
+      <Filter filterValue={newFilter} filterOnChange={handleFilterChange}/>
+      <div>filter shown with <input value={newFilter} onChange={handleFilterChange}/></div>
       <h2>add a new</h2>
       <PersonForm onSubmit={addPerson} nameValue={newName} nameOnChange={handlePersonChange} numberValue={newNumber} numberOnChange={handleNumberChange}/>
       <h2>Numbers</h2>
